@@ -1,37 +1,6 @@
-# CCC2022S1A2-group43
+# Cloud Computing Project: Sentiment Analysis of Melbourne's multi-area livability
 
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-
-## Contributors
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/HaozeXia"><img src="https://github.com/HaozeXia.png" width="150px;" alt=""/><br /><sub><b>Haoze Xia</b></sub></a><br /><a href="https://github.com/Zhuo-Yuanhao/CCC2022S1A2-group43/commits?author=HaozeXia" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/FuhanSun"><img src="https://github.com/FuhanSun.png" width="150px;" alt=""/><br /><sub><b>Fuhan Sun</b></sub></a><br /><a href="https://github.com/Zhuo-Yuanhao/CCC2022S1A2-group43/commits?author=FuhanSun" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/988158"><img src="https://github.com/988158.png" width="150px;" alt=""/><br /><sub><b>Sibo Xu</b></sub></a><br /><a href="https://github.com/Zhuo-Yuanhao/CCC2022S1A2-group43/commits?author=988158" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Zhuo-Yuanhao"><img src="https://github.com/Zhuo-Yuanhao.png" width="150px;" alt=""/><br /><sub><b>Yuhao Zhuo</b></sub></a><br /><a href="https://github.com/Zhuo-Yuanhao/CCC2022S1A2-group43/commits?author=Zhuo-Yuanhao" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/tateraus"><img src="https://github.com/tateraus.png" width="150px;" alt=""/><br /><sub><b>Yingxue Chen</b></sub></a><br /><a href="https://github.com/Zhuo-Yuanhao/CCC2022S1A2-group43/commits?author=tateraus" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<table>
-  <tr>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-
-This repository contains the source code for assignment 2 of the COMP90024 Cluster and Cloud Computing course at the University of Melbourne.
+This repository contains the source code for a project I completed at the University of Melbourne. In this project, I crawled and extracted Twitter data from the Melbourne area in real-time on the cloud server MRC, combined it with natural language processing sentiment analysis to achieve sentiment analysis of the livability of the Melbourne area, and finally presented the results on the website as heat map charts and other visualizations
 
 The system can be accessed via the following URL: 
 
