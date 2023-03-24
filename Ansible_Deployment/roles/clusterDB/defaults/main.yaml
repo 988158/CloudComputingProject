@@ -1,0 +1,3 @@
+---
+# Set the Masternode for couchDB
+Masternode: "{{ groups['Masternode'][0] }}"

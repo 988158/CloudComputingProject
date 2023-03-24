@@ -1,0 +1,47 @@
+---
+# set Up couchDB cluster
+- name: create couchDB nodes
+  no_log: true
+  ansible.builtin.uri:
+    url: http://{{ Masternode }}:5984/_cluster_setup
+    method: POST
+    user: "{{ couchdb_user }}"
+    password: "{{ couchdb_pass }}"
+    force_basic_auth: yes
+    status_code: 200,201
+    headers:
+      Content-Type: "application/json"
+    body_format: json
+    body: "{\"action\": \"enable_cluster\", \"bind_address\": \"0.0.0.0\", \"username\":\"{{ couchdb_user }}\", 
+    \"password\": \"{{ couchdb_pass }}\", \"port\": \"5984\", \"remote_node\": \"{{ inventory_hostname }}\", 
+    \"node_count\": \"{{ couchdb_nodes }}\",\"remote_current_user\": \"{{ couchdb_user }}\", \"remote_current_password\":\"{{ couchdb_pass }}\"}"
+
+# connect nodes to form couchDB cluster
+- name: connect nodes to form couchDB cluster
+  ansible.builtin.uri:
+    url: http://{{ Masternode }}:5984/_cluster_setup
+    method: POST
+    user: "{{ couchdb_user }}"
+    password: "{{ couchdb_pass }}"
+    force_basic_auth: yes
+    status_code: 200,201
+    headers:
+      Content-Type: "application/json"
+    body_format: json
+    body: "{\"action\":\"add_node\",\"host\":\"{{ inventory_hostname }}\",
+    \"port\":\"5984\",\"username\":\"{{ couchdb_user }}\",\"password\":\"{{ couchdb_pass }}\"}"
+
+# finish cluster setup
+- name: Finish cluster setup
+  ansible.builtin.uri:
+    url: http://{{ Masternode }}:5984/_cluster_setup
+    method: POST
+    user: "{{ couchdb_user }}"
+    password: "{{ couchdb_pass }}"
+    force_basic_auth: yes
+    headers:
+      Content-Type: "application/json"
+    status_code: 200,201,500
+    body_format: json
+    body: "{\"action\":\"finish_cluster\"}"    
+  run_once: true

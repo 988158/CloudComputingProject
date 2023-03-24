@@ -1,0 +1,17 @@
+---
+- hosts: instance1-frontend
+  vars_files:
+    - host_vars/couchdb.yaml
+  gather_facts: true
+  vars:
+    - ansible_user: ubuntu
+    - ansible_ssh_private_key_file: ~/.ssh/CCC-T43-A2
+    - ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
+  roles:
+    - role: common
+    - role: docker # install docker for frontend instance
+    - role: volumes
+    - role: clone_gitrepo # clone all codes from GitHub
+    - role: git-pull
+    - role: frontend  # use Docker container to run frontend code
